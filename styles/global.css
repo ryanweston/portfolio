@@ -1,4 +1,4 @@
-body {background-color:black;font-family: "Monument";overflow:hidden;}
+body {background-color:black;font-family: "Monument";overflow:hidden;margin:0;padding:0;}
 * > {
     border: 2px dashed red;
 }
@@ -39,9 +39,11 @@ body {background-color:black;font-family: "Monument";overflow:hidden;}
   }
 
 .container{
-    position: absolute;
-    bottom:300px;
-    right:0;
+    width:100%;
+    position: relative;
+
+    height:100%;
+    
 }
 h1 { 
     color: #FF0000;
@@ -64,23 +66,65 @@ p {
     font-weight:normal;
     color:#FF0000;
 }
+.content {
+    float:right;
+    width:70%;
+    margin-top:15%;
+    /* bottom:200px; */
+}
 .slide {
-
-    width:50%;
     overflow:auto;
     white-space:nowrap;
     padding-bottom:20px;
     padding-top:20px;
 }
 .item { 
+    position: relative;
     white-space: normal;
     display: inline-block;
-    width:200px;
+    width:300px;
     text-align: center;
     border:1px solid #FF0000;
     padding:15px;
+    overflow:hidden;
 }
 
 .desc { 
     text-align: left;
 }
+
+img { 
+    width:100%;
+}
+
+.bottom-link {
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  text-align: center;
+  color:red;
+  z-index: 100;
+  padding-bottom:40px;
+}
+
+.bottom-link a {
+  color:red;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.social { 
+  position: absolute;
+  top:20px;
+  right:20px;
+}
+
+.icon {
+  font-size:1.75em;
+  color:red; 
+  }
+
+.small-icon {
+  font-size:1em;
+  color:red; 
+  }
