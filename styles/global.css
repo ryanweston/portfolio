@@ -1,8 +1,8 @@
-body {background-color:black;font-family: "Monument";overflow:hidden;margin:0;padding:0;}
-* > {
-    border: 2px dashed red;
-}
-
+body {background-color:black;font-family: "Monument";;margin:0!important;padding:0!important;}
+canvas {width:100%!important;height:99%!important;z-index:-1;padding:0; margin:0;box-sizing: border-box;position: absolute; top:0;}
+/* * { 
+  border:1px solid red;
+} */
 @font-face {
     font-family: "Monument";
     src: url("../fonts/MonumentGroteskTrial-Black.woff") format("woff");
@@ -27,7 +27,7 @@ body {background-color:black;font-family: "Monument";overflow:hidden;margin:0;pa
   }
 
 
-  .scroll{border:none;}
+  .scroll{border:none;padding:none;}
   .scroll:hover i { 
     margin-top: 5px;
     color: #990000!important;
@@ -37,8 +37,13 @@ body {background-color:black;font-family: "Monument";overflow:hidden;margin:0;pa
       color: #990000!important;
   }
 
-  
+  /* FIREFOX SCROLL STYLES */
+  .slide {
+    scrollbar-color: #FF0000 #191919; 
+    scrollbar-width: thin;
+  }
 
+  /* SAFARI/CHROME SCROLL STYLES */
   .slide::-webkit-scrollbar {
     height: 5px;
   }
@@ -61,27 +66,29 @@ body {background-color:black;font-family: "Monument";overflow:hidden;margin:0;pa
   }
 
 .container{
+    box-sizing: border-box;
     width:100%;
-    position: relative;
-
-    height:100%;
+    position: absolute;
+    top:0;
+    z-index:50;
+    height:40%;
     
 }
 h1 { 
     color: #FF0000;
     font-size:4.75em;
-    line-height: 0;
+    line-height: normal;
 }
 h2 {
     font-size:1.5em;
     color: #FF0000;
-    line-height: 0;
+    line-height: normal;
 }
 h3 {
     font-weight:normal;
     font-size:1.1em;
     color: #FF0000;
-    line-height: 0;
+    line-height: normal;
 }
 p {
     font-size:0.75;
@@ -89,12 +96,17 @@ p {
     color:#FF0000;
 }
 .content {
-    float:right;
-    width:70%;
-    margin-top:15%;
+  box-sizing: border-box; 
+  padding:30px;
+  padding-right:0px;
+    float:none;
+    width:100%;
+    margin-top:11%;
+   
     /* bottom:200px; */
 }
 .slide {
+   box-sizing: border-box;
     overflow:auto;
     white-space:nowrap;
     padding-bottom:20px;
@@ -109,6 +121,7 @@ p {
     border:1px solid #FF0000;
     padding:15px;
     overflow:hidden;
+     box-sizing: border-box;
 }
 
 .desc { 
@@ -119,6 +132,22 @@ img {
     width:100%;
 }
 
+@media (min-height:600px) {
+  .content {margin-top:14%;}
+  
+}
+
+
+@media (min-width:600px) {
+  .content {
+    float:right;
+    width:70%;
+    margin-top:11%;
+    padding:0px;
+}
+h1, h2, h3 {line-height: 0;}
+}
+
 .bottom-link {
   position:absolute;
   bottom:0px;
@@ -126,13 +155,16 @@ img {
   text-align: center;
   color:red;
   z-index: 100;
+  box-sizing: border-box;
   padding-bottom:40px;
+  
 }
 
 .bottom-link a {
   color:red;
   text-decoration: none;
   font-weight: normal;
+  
 }
 
 .social { 
