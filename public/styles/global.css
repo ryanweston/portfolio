@@ -1,5 +1,7 @@
-body {background-color:black;font-family: "Monument";;margin:0!important;padding:0!important;}
-canvas {width:100%!important;height:99%!important;z-index:-1;padding:0; margin:0;box-sizing: border-box;position: absolute; top:0;}
+body {background-color:black;font-family: "Monument";margin:0;padding:0;}
+canvas {width:100%!important;height:100%;z-index:1000; margin:0; padding:0;overflow:hidden;opacity:0.1}
+
+/* box-sizing: border-box;position: absolute; top:0; */
 /* * { 
   border:1px solid red;
 } */
@@ -29,7 +31,7 @@ canvas {width:100%!important;height:99%!important;z-index:-1;padding:0; margin:0
 
   .scroll{border:none;padding:none;}
   .scroll:hover i { 
-    margin-top: 5px;
+    /* margin-top: 5px; */
     color: #990000!important;
   }
 
@@ -71,12 +73,12 @@ canvas {width:100%!important;height:99%!important;z-index:-1;padding:0; margin:0
     position: absolute;
     top:0;
     z-index:50;
-    height:40%;
+    height:100%;
     
 }
 h1 { 
     color: #FF0000;
-    font-size:4.75em;
+    font-size:5em;
     line-height: normal;
 }
 h2 {
@@ -144,6 +146,7 @@ img {
     width:70%;
     margin-top:11%;
     padding:0px;
+    box-sizing: border-box;
 }
 h1, h2, h3 {line-height: 0;}
 }
