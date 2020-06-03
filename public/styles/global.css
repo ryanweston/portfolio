@@ -5,6 +5,7 @@ canvas {width:100%!important;height:100%;z-index:1000; margin:0; padding:0;overf
 /* * { 
   border:1px solid red;
 } */
+
 @font-face {
     font-family: "Monument";
     src: url("../fonts/MonumentGroteskTrial-Black.woff") format("woff");
@@ -21,13 +22,24 @@ canvas {width:100%!important;height:100%;z-index:1000; margin:0; padding:0;overf
 
   a {
     text-decoration: none;
-    border-bottom:1px solid #FF0000;
+    /* border-bottom:1px solid #FF0000; */
   }
 
   a:visited {
     color:#FF0000;
   }
 
+  a:hover {
+    color: #990000!important;
+}
+  a:hover > .icon {
+    color: #990000!important;
+}
+
+
+  .desc a {
+    border-bottom:1px solid #FF0000;
+  }
 
   .scroll{border:none;padding:none;}
   .scroll:hover i { 
@@ -35,9 +47,6 @@ canvas {width:100%!important;height:100%;z-index:1000; margin:0; padding:0;overf
     color: #990000!important;
   }
 
-  a:hover {
-      color: #990000!important;
-  }
 
   /* FIREFOX SCROLL STYLES */
   .slide {
@@ -174,6 +183,7 @@ h1, h2, h3 {line-height: 0;}
   position: absolute;
   top:20px;
   right:20px;
+  z-index:1000;
 }
 
 .icon {
