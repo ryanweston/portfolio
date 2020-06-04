@@ -5,7 +5,7 @@ var loader = new THREE.GLTFLoader();
 const loadingScreen = document.getElementById("loading");
 const domWrapper = document.getElementById("wrapper");
 var model;
-camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 100, 000);
+camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 2, 1000);
 camera.position.y = 8;
 camera.position.z = 5;
 
@@ -36,15 +36,15 @@ loader.load(
     // called when the resource is loaded
     function (gltf) {
         model = gltf.scene;
-        var material1 = new THREE.MeshStandardMaterial({ color: 0xFF0000 });
-        model.traverse((o) => {
-            if (o.isMesh) {
-                console.log("there is a mesh");
-                // note: for a multi-material mesh, `o.material` may be an array,
-                // in which case you'd need to set `.map` on each value.
-                o.material = material1;
-            }
-        })
+        // var material1 = new THREE.MeshStandardMaterial({ color: 0xFF0000 });
+        // model.traverse((o) => {
+        //     if (o.isMesh) {
+        //         console.log("there is a mesh");
+        //         // note: for a multi-material mesh, `o.material` may be an array,
+        //         // in which case you'd need to set `.map` on each value.
+        //         o.material = material1;
+        //     }
+        // })
         scene.add(gltf.scene);
     },
     // called while loading is progressing
@@ -74,11 +74,6 @@ window.addEventListener('resize', onWindowResize, false);
 
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
-    // if (window.innerWidth < 1200) {
-    //     model.position.x = 0;
-    //     console.log(window.innerWidth);
-    //     camera.updateProjectionMatrix();
-    // }
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
@@ -87,7 +82,8 @@ function onWindowResize() {
 
 var render = function () {
     requestAnimationFrame(render);
-    model.rotation.y = Date.now() * .0002;
+    model.rotation.y = Date.now() * 0.0005;
+    console.log("Date:" + Date.now() + " Rotation: " + model.rotation.y);
     model.position.x = 2;
     renderer.render(scene, camera);
 };
