@@ -7,162 +7,218 @@ canvas {width:100%!important;height:100%!important;z-index:-2; margin:0; padding
 } */
 
 @font-face {
-    font-family: "Monument";
-    src: url("../fonts/MonumentGroteskTrial-Black.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "Monument";
-    src: url("../fonts/MonumentGroteskTrial-Mono.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  h1 { 
-    color: #FF0000;
-    font-size:4.25em;
-    line-height: normal;
-    margin-bottom:0!important;
+  font-family: "Monument";
+  src: url("../fonts/MonumentGroteskTrial-Black.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
+  
+@font-face {
+  font-family: "Monument";
+  src: url("../fonts/MonumentGroteskTrial-Mono.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 { 
+  color: #FF0000;
+  font-size:4.25em;
+  line-height: normal;
+  margin-bottom:0!important;
+}
+
 h2 {
-    font-size:1.5em;
-    color: #FF0000;
-    line-height: normal;
-   
+  font-size:1.5em;
+  color: #FF0000;
+  line-height: normal;
 }
+
 h3 {
-    font-weight:normal;
-    font-size:1.1em;
-    color: #FF0000;
-    margin-top:0!important;
-    line-height: normal;
+  font-weight:normal;
+  font-size:1.1em;
+  color: #FF0000;
+  margin-top:0!important;
+  line-height: normal;
 }
+
 p {
-    font-size:0.75;
-    font-weight:normal;
-    color:#FF0000;
+  font-size:0.75;
+  font-weight:normal;
+  color:#FF0000;
 }
 
-  a {
-    text-decoration: none;
-    /* border-bottom:1px solid #FF0000; */
-  }
-
-  a:visited {
-    color:#FF0000;
-  }
-
-  a:hover {
-    color: #990000!important;
-}
-  a:hover > .icon {
-    color: #990000!important;
+a {
+  text-decoration: none;
+  /* border-bottom:1px solid #FF0000; */
 }
 
+a:visited {
+  color:#FF0000;
+}
 
-  .desc a {
-    border-bottom:1px solid #FF0000;
+a:hover {
+  color: #990000!important;
+}
+
+a:hover > .icon {
+  color: #990000!important;
+}
+
+
+.desc a {
+  border-bottom:1px solid #FF0000;
+}
+
+#loading { 
+  width:100%;
+  height:100%;
+  color:white;
+  display:block;
   }
 
-  
-
-  #loading { 
-    width:100%;
-    height:100%;
-    color:white;
-    display:block;
-  }
-
-  #wrapper { 
-    display:none;
-  }
+#wrapper { 
+  display:none;
+}
 
 .container{
-    /* box-sizing: border-box; */
-    width:100%;
-    position: absolute;
-    top:0;
-    z-index:50;
-    height:100%;
-    padding-top:10%;
-    padding-bottom:120px;
+  /* box-sizing: border-box; */
+  width:100%;
+  position: absolute;
+  top:0;
+  z-index:50;
+  height:100%;
+  padding-top:10%;
+  padding-bottom:120px;
 }
 
 .content {
   box-sizing: border-box; 
   padding:30px;
-  padding-right:0px;
-    float:none;
-    width:100%;
-    /* margin-top:11%; */
-    height:100%;
-    padding-bottom:50px;
-    /* bottom:200px; */
+  padding-right:30px;
+  float:none;
+  width:100%;
+  /* margin-top:11%; */
+  height:100%;
+  padding-bottom:50px;
+  /* bottom:200px; */
 }
+.slide-container {
+  box-sizing: border-box;
+  /* padding-bottom:20px;
+  padding-top:20px; */
+  position:relative;
+
+}
+
+.slide { 
+  overflow-x:scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space:nowrap;
+}
+
+button i{
+  margin:0;
+  line-height: 0;
+  font-size:1.25em;
+}
+
+button {
+  z-index:500;
+  margin:0;
+  background:none;
+  border:0;
+  height:360px;
+  padding:0px;
+}
+
+button:focus {
+  outline:0;
+}
+
+#scroll-left { 
+  display:none;
+  position:absolute; 
+  left:10px;
+  /* box-shadow: -2px 0px 10px 1px #000000; */
+}
+
+#scroll-right { 
+  position:absolute; 
+  right:10px;
+}
+
+.circle { 
+  padding:20px;
+  background:black;
+  border-radius:50px;
+  color:#FF0000;
+  width:18px;
+  box-shadow: -2px 0px 10px 1px #000000;
+}
+
+.circle:hover { 
+  background:#FF0000;
+  color:black;
+}
+
+/* FIREFOX SCROLL STYLES */
 .slide {
-    box-sizing: border-box;
-    overflow:auto;
-    -webkit-overflow-scrolling: touch;
-    white-space:nowrap;
-    padding-bottom:20px;
-    padding-top:20px;
+  scrollbar-color: #FF0000 #191919; 
+  scrollbar-width: thin;
+ 
 }
 
-.scroll{border:none;padding:none;}
-  .scroll:hover i { 
-    /* margin-top: 5px; */
-    color: #990000!important;
-  }
+/* SAFARI/CHROME SCROLL STYLES */
+.slide::-webkit-scrollbar {
+  height: 5px;
 
-
-  /* FIREFOX SCROLL STYLES */
-  .slide {
-    scrollbar-color: #FF0000 #191919; 
-    scrollbar-width: thin;
-  }
-
-  /* SAFARI/CHROME SCROLL STYLES */
-  .slide::-webkit-scrollbar {
-    height: 5px;
-  }
+}
   
-  /* Track */
-  .slide::-webkit-scrollbar-track {
-    background: #191919; 
-    border-radius:20px;
-  }
+/* Track */
+.slide::-webkit-scrollbar-track {
+  background: #191919; 
+  border-radius:20px;
+  /* box-shadow: inset 0 0 10px 10px green;
+  border: solid 3px transparent; */ 
+}
    
-  /* Handle */
-  .slide::-webkit-scrollbar-thumb {
-    background: #FF0000; 
-    border-radius:20px;
-  }
+/* Handle */
+.slide::-webkit-scrollbar-thumb {
+  background: #FF0000; 
+  border-radius:20px;
+  /* box-shadow: inset 0 0 10px 10px green;
+  border: solid 3px transparent; */
+}
   
-  /* Handle on hover */
-  .slide::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-  
+/* Handle on hover */
+.slide::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .item { 
-    position: relative;
-    white-space: normal;
-    display: inline-block;
-    width:300px;
-    text-align: center;
-    border:1px solid #FF0000;
-    padding:3px 15px 15px 15px;
-    overflow:hidden;
-     box-sizing: border-box;
+  position: relative;
+  white-space: normal;
+  display: inline-block;
+  width:300px;
+  text-align: center;
+  border:1px solid #FF0000;
+  padding:3px 15px 15px 15px;
+  overflow:hidden;
+  box-sizing: border-box;
+  margin-bottom:20px;
+  height:360px;
+}
+
+.last {
+  margin-right:35px;
 }
 
 .desc { 
-    text-align: left;
+  text-align: left;
 }
 
 img { 
-    width:100%;
+  width:100%;
 }
 
 @media (min-height:600px) {
@@ -177,6 +233,7 @@ img {
     width:70%;
     /* margin-top:11%; */
     padding:0px;
+    padding-right:30px;
     box-sizing: border-box;
 }
   .container { 
@@ -202,8 +259,15 @@ img {
   color:red;
   text-decoration: none;
   font-weight: normal;
-  
 }
+
+.arrow-down{border:none;padding:none;}
+
+.arrow-down:hover i { 
+    /* margin-top: 5px; */
+    color: #990000!important;
+  }
+
 
 .social { 
   position: absolute;
