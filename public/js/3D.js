@@ -17,10 +17,6 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 var scene = new THREE.Scene();
-// Optional: Provide a DRACOLoader instance to decode compressed mesh data
-// var dracoLoader = new DRACOLoader();
-// dracoLoader.setDecoderPath('/examples/js/libs/draco/');
-// loader.setDRACOLoader(dracoLoader);;
 
 //LIGHTS
 var light = new THREE.AmbientLight(0xffffff, 0.15);
@@ -33,6 +29,7 @@ scene.add(light2);
 loader.load(
     // resource URL
     '../models/doinky.glb',
+
     // called when the resource is loaded
     function (gltf) {
         model = gltf.scene;
@@ -45,7 +42,7 @@ loader.load(
         //         o.material = material1;
         //     }
         // })
-        scene.add(gltf.scene);
+        scene.add(model);
     },
     // called while loading is progressing
     function (xhr) {
@@ -77,8 +74,6 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
-
-// camera.position.z = 5;
 
 var render = function () {
     requestAnimationFrame(render);
