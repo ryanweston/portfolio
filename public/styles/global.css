@@ -65,7 +65,7 @@ a:hover > .icon {
 }
 
 
-.desc a {
+.item a {
   border-bottom:1px solid #FF0000;
 }
 
@@ -88,13 +88,14 @@ a:hover > .icon {
   z-index:50;
   height:100%;
   padding-top:10%;
-  padding-bottom:120px;
+  /* When blog added, remove comment */
+  /* padding-bottom:120px; */
 }
 
 .content {
   box-sizing: border-box; 
   padding:30px;
-  padding-right:30px;
+  /* padding-right:30px; */
   float:none;
   width:100%;
   /* margin-top:11%; */
@@ -104,10 +105,8 @@ a:hover > .icon {
 }
 .slide-container {
   box-sizing: border-box;
-  /* padding-bottom:20px;
-  padding-top:20px; */
   position:relative;
-
+  padding-top:20px;
 }
 
 .slide { 
@@ -214,7 +213,14 @@ button:focus {
 }
 
 .desc { 
+  position:relative;
   text-align: left;
+}
+
+.item span { 
+  position:absolute;
+  bottom:15px;
+  left:15px;
 }
 
 img { 
