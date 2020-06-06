@@ -70,11 +70,20 @@ a:hover > .icon {
 }
 
 #loading { 
+  position:absolute;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
   color:white;
-  display:block;
-  }
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading h1 { 
+  margin:0;
+}
 
 #wrapper { 
   display:none;

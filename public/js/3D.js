@@ -54,7 +54,7 @@ loader.load(
         if (currentLoad !== 100) {
             console.log(currentLoad);
             domWrapper.style.display = 'none';
-            loadingScreen.style.display = 'block';
+            loadingScreen.style.display = 'flex';
         } else if (currentLoad === 100) {
             console.log("Load successful!");
             domWrapper.style.display = 'block';
