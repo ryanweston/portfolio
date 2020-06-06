@@ -1,5 +1,5 @@
 body {background-color:black;font-family: "Monument";margin:0;padding:0;}
-canvas {width:100%!important;height:100%!important;z-index:-2; margin:0; padding:0;opacity:0.1; position: fixed; top:0;}
+canvas {width:100%!important;height:100%!important;z-index:-2; margin:0; padding:0;opacity:0.35; position: fixed; top:0;}
 
 /* box-sizing: border-box;position: absolute; top:0; */
 /* * { 
@@ -43,7 +43,7 @@ h3 {
 }
 
 p {
-  font-size:0.75;
+  font-size:0.75em;
   font-weight:normal;
   color:#FF0000;
 }
@@ -53,10 +53,13 @@ p {
   padding-bottom:15px;
 }
 
-@media (min-width:768pxpx) {
-  h1 {font-size:4.5em; line-height:normal;};
+@media (min-width:768px) {
+  canvas {opacity:0.1;}
+  h1 {font-size:4.5em; line-height:normal;}
   h2 {font-size:1.5em; line-height:normal; margin:normal;}
-  h3 {font-size:1.5em;}
+  .item h2 {padding-top:20px;padding-bottom:20px;}
+  h3 {font-size:1.1em;}
+  p {font-size:1em;}
 }
 
 a {
@@ -131,12 +134,15 @@ a:hover > .icon {
   box-sizing: border-box;
   width:100%;
   position: absolute;
+  display:flex;
+  justify-content: flex-end;
+  align-items:center;
   top:0;
   z-index:50;
-  height:100%;
-  padding-top:5%;
+  height:100vh;
+  /* padding-top:5%; */
   /* When blog added, remove comment */
-  padding-bottom:20%;
+  /* padding-bottom:20%; */
 }
 
 .content {
@@ -148,7 +154,7 @@ a:hover > .icon {
   float:none;
   width:100%;
   /* margin-top:11%; */
-  height:100%;
+  /* height:100%; */
   /* bottom:200px; */
 }
 .slide-container {
@@ -251,7 +257,7 @@ button:focus {
   overflow:hidden;
   box-sizing: border-box;
   margin-bottom:20px;
-  height:330px;
+  height:300px;
 }
 
 .last {
@@ -259,8 +265,10 @@ button:focus {
 }
 
 .desc { 
-  position:relative;
+  /* position:relative; */
   text-align: left;
+  /* height:100px;
+  width:100%; */
 }
 
 .item span { 
@@ -284,7 +292,7 @@ img {
     box-sizing: border-box;
 }
   .container { 
-    padding-top:10%;
+    /* padding-top:10%; */
     padding-bottom:0px!important;
     box-sizing: border-box;
   }
