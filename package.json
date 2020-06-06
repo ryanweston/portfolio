@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ryanweston/portfolio#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "gltf-pipeline": "^2.1.9",
     "nodemon": "^2.0.4"
   }
 }
