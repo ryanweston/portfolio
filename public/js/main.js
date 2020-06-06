@@ -3,7 +3,7 @@ const buttonLeft = document.getElementById("scroll-left");
 const element = document.getElementById("slide");
 
 buttonRight.onclick = function () {
-    element.scrollLeft += 300
+    element.scrollLeft += 310
 }
 
 buttonLeft.onclick = function () {
