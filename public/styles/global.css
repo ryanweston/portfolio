@@ -53,9 +53,46 @@ p {
   padding-bottom:15px;
 }
 
+#type {
+  color:#FF0000;
+  white-space: nowrap;
+  overflow: hidden; 
+  position: relative;
+}
+
+#cursor {
+  border-bottom: solid 3px #FF0000;;
+  position: absolute;
+  right: -5px;
+  width: 20px;
+}
+
+/* Animation */
+#type {
+  animation: animated-text 2s steps(40,end) 1s 1 normal both
+}
+
+#cursor{
+   animation: animated-cursor 600ms steps(40,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 415px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-bottom-color: #FF0000;}
+  to{border-bottom-color: transparent;}
+}
+
 @media (min-width:768px) {
   canvas {opacity:0.1;}
-  h1 {font-size:4.5em; line-height:normal;}
+  h1 {font-size:5.5em; line-height:0.75em;}
   h2 {font-size:1.5em; line-height:normal; margin:normal;}
   .item h2 {padding-top:20px;padding-bottom:20px;}
   h3 {font-size:1.1em;}
