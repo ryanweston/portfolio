@@ -22,7 +22,7 @@ canvas {width:100%!important;height:100%!important;z-index:-2; margin:0; padding
 
 h1 { 
   color: #FF0000;
-  font-size:4.25em;
+  font-size:3.75em;
   line-height: normal;
   margin-bottom:0!important;
 }
@@ -47,13 +47,18 @@ p {
   color:#FF0000;
 }
 
+@media (min-width:600px) {
+  h1 {font-size:4.5em};
+
+}
+
 a {
   text-decoration: none;
   /* border-bottom:1px solid #FF0000; */
 }
 
 a:visited {
-  color:#FF0000;
+  color:#FF0000!important;
 }
 
 a:hover {
@@ -68,6 +73,30 @@ a:hover > .icon {
 .item a {
   border-bottom:1px solid #FF0000;
 }
+
+.item a:hover {
+  border-bottom:1px solid #990000;
+}
+
+.item:hover a {
+  border-bottom:1px solid #000000;
+  color:#000000!important;
+}
+
+.item:hover a:hover {
+  border-bottom:2px solid #000000;
+  padding-bottom:2px;
+}
+
+/* .item:hover { 
+  background-color:#FF0000;
+} */
+.item:hover, .item:hover > .desc p, .item:hover >  h2{ 
+  background-color:#FF0000;
+  color:black!important;
+}
+
+
 
 #loading { 
   position:absolute;
@@ -98,13 +127,13 @@ a:hover > .icon {
   height:100%;
   padding-top:10%;
   /* When blog added, remove comment */
-  /* padding-bottom:120px; */
+  padding-bottom:15%;
 }
 
 .content {
   box-sizing: border-box; 
   padding:30px;
-  /* padding-right:30px; */
+  padding-right:30px;
   float:none;
   width:100%;
   /* margin-top:11%; */
@@ -248,7 +277,7 @@ img {
     width:70%;
     /* margin-top:11%; */
     padding:0px;
-    padding-right:30px;
+    /* padding-right:30px; */
     box-sizing: border-box;
 }
   .container { 
