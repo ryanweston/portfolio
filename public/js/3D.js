@@ -2,8 +2,14 @@
 
 // Instantiate a loader
 var loader = new THREE.GLTFLoader();
+// Optional: Provide a DRACOLoader instance to decode compressed mesh data
+var dracoLoader = new THREE.DRACOLoader();
+dracoLoader.setDecoderPath('../decoder/');
+loader.setDRACOLoader(dracoLoader);
+
 const loadingScreen = document.getElementById("loading");
 const domWrapper = document.getElementById("wrapper");
+
 var model;
 camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 2, 1000);
 camera.position.y = 8;
@@ -28,7 +34,7 @@ scene.add(light2);
 // Load a glTF resource
 loader.load(
     // resource URL
-    '../models/doinky.glb',
+    '../models/compressed.glb',
 
     // called when the resource is loaded
     function (gltf) {
@@ -43,6 +49,7 @@ loader.load(
         //     }
         // })
         scene.add(model);
+        render();
     },
     // called while loading is progressing
     function (xhr) {
@@ -56,7 +63,6 @@ loader.load(
             console.log("Load successful!");
             domWrapper.style.display = 'block';
             loadingScreen.style.display = 'none';
-            render();
         }
     },
     // called when loading has errors
