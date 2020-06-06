@@ -121,7 +121,7 @@ a:hover > .icon {
 }
 
 .container{
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   width:100%;
   position: absolute;
   top:0;
@@ -129,7 +129,7 @@ a:hover > .icon {
   height:100%;
   padding-top:10%;
   /* When blog added, remove comment */
-  padding-bottom:15%;
+  padding-bottom:20%;
 }
 
 .content {
@@ -147,6 +147,7 @@ a:hover > .icon {
   box-sizing: border-box;
   position:relative;
   padding-top:20px;
+  /* padding-right:30px; */
 }
 
 .slide { 
@@ -250,7 +251,7 @@ button:focus {
 }
 
 .last {
-  margin-right:35px;
+  margin-right:0;
 }
 
 .desc { 
@@ -268,12 +269,6 @@ img {
   width:100%;
 }
 
-@media (min-height:600px) {
-  /* .content {margin-top:14%;} */
-  
-}
-
-
 @media (min-width:600px) {
   .content {
     float:right;
@@ -286,6 +281,9 @@ img {
   .container { 
     padding-bottom:0px!important;
     box-sizing: border-box;
+  }
+  .last {
+    margin-right:35px;
   }
 /* h1, h2, h3 {line-height: 0;} */
 }
