@@ -55,9 +55,11 @@ p {
 a {
   text-decoration: none;
   /* border-bottom:1px solid #FF0000; */
+  color:#FF0000!important;
 }
 
 a:visited {
+  text-decoration: none;
   color:#FF0000!important;
 }
 
@@ -119,7 +121,7 @@ a:hover > .icon {
 }
 
 .container{
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   width:100%;
   position: absolute;
   top:0;
@@ -149,7 +151,7 @@ a:hover > .icon {
 
 .slide { 
   overflow-x:scroll;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   white-space:nowrap;
 }
 
@@ -170,6 +172,7 @@ button {
 
 button:focus {
   outline:0;
+  border:none;
 }
 
 #scroll-left { 
