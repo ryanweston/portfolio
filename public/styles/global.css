@@ -124,7 +124,7 @@ a:hover > .icon {
 }
 
 
-.item a {
+.item a{
   border-bottom:1px solid #FF0000;
   font-size:0.75em;
 }
@@ -421,4 +421,19 @@ img {
 .small-icon {
   font-size:1em;
   color:red; 
+  }
+
+  #popup {
+    box-sizing: border-box;
+    padding:20px 20px 9px 20px;
+    text-align:right;
+    position:absolute;
+    bottom:0;
+    z-index:400;
+    width:100%;
+    font-size:0.75em;
+  }
+
+  #popup a {
+    text-decoration: underline;
   }
