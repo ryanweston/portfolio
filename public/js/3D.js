@@ -105,7 +105,7 @@ function onWindowResize() {
 function animate() {
 
 	requestAnimationFrame( animate );
-    model.rotation.y += 0.015;
+    model.rotation.y += 0.01;
     model.position.x = 2;
 	composer.render();
 
