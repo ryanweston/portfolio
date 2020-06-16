@@ -17,6 +17,9 @@ loader.setDRACOLoader(dracoLoader);
 
 const loadingScreen = document.getElementById("loading");
 const domWrapper = document.getElementById("wrapper");
+var links = document.getElementsByTagName("a");
+
+console.log(links);
 
 var model;
 var camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 2, 1000);
@@ -47,7 +50,9 @@ composer.addPass( renderPass );
 var glitchPass = new GlitchPass();
 composer.addPass( glitchPass );
 
-
+//Materials 
+var material1 = new THREE.MeshStandardMaterial({ wireframe: true });
+var material2 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0XFF0000 });
 
 // Load a glTF resource
 loader.load(
@@ -57,7 +62,6 @@ loader.load(
     // called when the resource is loaded
     function (gltf) {
         model = gltf.scene;
-        var material1 = new THREE.MeshStandardMaterial({ wireframe: true });
         model.traverse((o) => {
             if (o.isMesh) {
                 console.log("there is a mesh");
@@ -68,7 +72,7 @@ loader.load(
         })
         scene.add(model);
         animate();
-        // dracoLoader.dispose();
+        dracoLoader.dispose();
     },
     // called while loading is progressing
     function (xhr) {
@@ -92,7 +96,29 @@ loader.load(
     }
 );
 
-
+for (var i = 0; i < links.length; i++) {
+    var a = links[i];
+    a.addEventListener("mouseover", () => { 
+        model.traverse((o) => {
+            if (o.isMesh) {
+                console.log("there is a mesh");
+                // note: for a multi-material mesh, `o.material` may be an array,
+                // in which case you'd need to set `.map` on each value.
+                o.material = material2;
+            }
+        })
+    })
+    a.addEventListener("mouseout", () => {
+        model.traverse((o) => {
+            if (o.isMesh) {
+                console.log("there is a mesh");
+                // note: for a multi-material mesh, `o.material` may be an array,
+                // in which case you'd need to set `.map` on each value.
+                o.material = material1;
+            }
+        })
+      });
+}
 
 window.addEventListener('resize', onWindowResize, false);
 
