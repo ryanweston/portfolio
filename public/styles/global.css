@@ -143,9 +143,7 @@ nav ul li:hover h3, footer a:hover {
 }
 
 #content2 ul {
-  /* list-style: square;
-  list-style-position: inside; */
-  /* color:white; */
+  list-style-type:none;
   width:100%;
   padding:0px;
 }
