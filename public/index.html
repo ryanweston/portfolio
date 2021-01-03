@@ -2,14 +2,15 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta name="viewport" content="width=device-width, , user-scalable=no">
 
     <title>Ryan Weston</title>
     <link rel="stylesheet" type="text/css" href="styles/global.css">
     <script src="https://kit.fontawesome.com/df14430925.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://use.typekit.net/kao0uud.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <script async defer data-domain="ryanweston.me" src="https://plausible.io/js/plausible.js"></script>
 
 </head>
@@ -17,150 +18,74 @@
 <body>
     <script type="module" src="js/3D.js"></script>
 
-    <div id="loading">
+    <!-- <div id="loading">
         <h1>LOADING<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></h1>
-    </div>
+    </div> -->
 
-    <div id="popup">
+    <!-- <div id="popup">
         <h3>Interested in my design work? Check out my <a href="#" target="_blank">instagram!</a></h3>
-    </div>
+    </div> -->
+    <canvas id="c"></canvas>
 
-    <div id="wrapper">
-        <div class="social">
-            <a id="social-link" href="https://github.com/ryanweston" target="_blank"><i class="fab fa-github-alt icon"></i></a>
-            <a id="social-link" href="#" target="_blank"><i class="fa fa-instagram icon" aria-hidden="true"></i>            </a>
-            <a id="social-link" href="https://twitter.com/rynwstn" target="_blank"><i class="fab fa-twitter icon"></i></a>
-            <a id="social-link" href="www.linkedin.com/in/ryanlweston" target="_blank"><i class="fab fa-linkedin-in icon"></i></a>
-        </div>
+    <nav>
+        <ul>
+            <li><a href="/"><h3>RYAN WEST<span class="glyph">j</span>N</h3></a></li>
+            <div class="right">
+                <li><a href="comingsoon.html"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> JOURNAL</h3></a></li>
+                <li><a href="comingsoon.html"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> DESIGN</h3></a></li>
+                <li><a href="comingsoon.html"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> LAB</h3></a></li>
+                <li><a href="comingsoon.html"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> CONTACT</h3></a></li>
 
-        <div class="container">
-            <div class="content">
-                <h1>RYAN WESTON</h1>
-                <div id="type">
-                    <h3>// frontend web developer / designer<div id="cursor"></div>
-                    </h3>
-                </div>
-
-                <div class="slide-container">
-                    <button id="scroll-left">
-                        <div class="circle">
-                            <i class="fas fa-chevron-left"></i>
-                        </div>
-                    </button>
-                    <button id="scroll-right">
-                        <div class="circle">
-                            <i class="fas fa-chevron-right"></i>
-                        </div>
-                    </button>
-
-                    <div id="slide" class="slide">
-
-                        <div class="item">
-                            <h2>UNISOCIAL</h2>
-                            <img alt="unisocial website picture" src="images/projects/us.jpg">
-                            <div class="desc">
-                                <p>// University reviews
-                                    ranking sytem, based on social scores.</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="http://unisocial.uk">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item">
-                            <h2>YOGAN YOGHURTS</h2>
-                            <img alt="unisocial website picture" src="images/projects/yy.jpg">
-                            <div class="desc">
-                                <p>// Front-end development for a mock vegan yoghurt brand</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="http://projects.ryanweston.me/yogan-yoghurts">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item">
-                            <h2>STAR WARS</h2>
-                            <img alt="unisocial website picture" src="images/projects/sw.jpg">
-                            <div class="desc">
-                                <p>// A Star Wars themed karaoke generator, using a lyrics API</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="http://projects.ryanweston.me/star-wars-karaoke">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item">
-                            <h2>MAPPA.PLY</h2>
-                            <img alt="unisocial website picture" src="images/projects/mp.jpg">
-                            <div class="desc">
-                                <p>// P5.js GPS application based on pyscho-geographical
-                                    principles </p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="https://projects.ryanweston.me/Mappa.Ply/">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item">
-                            <h2>DIGITAL BEEHIVE</h2>
-                            <img alt="unisocial website picture" src="images/projects/db.jpg">
-                            <div class="desc">
-                                <p>// Site for a mock digital agency during my 2017 work experience</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="http://projects.ryanweston.me/digitalbeehive">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item">
-                            <h2>RED PANDA</h2>
-                            <img alt="unisocial website picture" src="images/projects/rp.jpg">
-                            <div class="desc">
-                                <p>// Site & social media presence for a local takeaway & restaurant</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="https://projects.ryanweston.me/red-panda-restaurant/">See
-                                    project <i class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item">
-                            <h2>SCOBLE CONSTR.</h2>
-                            <img alt="unisocial website picture" src="images/projects/sc.jpg">
-                            <div class="desc">
-                                <p>// Website designed and developed for a local construction company</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="http://scobleconstruction.co.uk/">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                        <div class="item last">
-                            <h2>POLLUTION</h2>
-                            <img alt="unisocial website picture" src="images/projects/p.jpg">
-                            <div class="desc">
-                                <p>// P5.js generative art project exploring pollution</p>
-                            </div>
-                            <span>
-                                <a id="project" target="_blank" href="http://projects.ryanweston.me/pollution">See project <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- <div class="bottom-link">
-                <a href="#" class="arrow-down">Thoughts<br><i class="fas fa-chevron-down small-icon"></i></a>
-            </div> -->
-        </div>
+        </ul>
+    </nav>
 
-
+    <div class="header-container">
+        <div id="content">
+            <div id="model1"></div>
+                <!-- <h1>ryan west<span class="glyph">j</span>n is a student des<span class="glyph">i</span>gner &amp; web developer from plymouth, uk with a passion for em<span class="glyph">I</span>rging technologies and creative problem solving. he’s employed by <span class="underline">cudo ventures</span> &#38; has experience at <span class="underline">offigo</span>. he is also currently taking <span class="underline">freelance work</span><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 35px;"></span></h1> -->
+               <!-- <h1>CREATIVE DEVELOPER / DESIGNER</h1> -->
+               <!-- <h1><span class="glyph">Iqerefghijglmnopqrstuvw</span></h1> -->
+                <h1>Ryan Weston is a student des<span class="glyph">i</span>gner &amp; web developer from Plymouth, UK with a passion for em<span class="glyph">I</span>rging technologies and creative problem solving. He’s currently employed by <span class="underline">Cudo Ventures</span> but is also currently taking on <span class="underline">freelance work</span><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 35px;"></span></h1>
+            </div>
     </div>
+
+    <div class="content-container">
+        <div id="content2">
+            <div id="model2"></div>
+            <ul>
+                <li class="project-link" data="us">
+                    <h3><b>X</b>  &nbsp; &nbsp; <span class="item">UNISOCIAL</span></h3> 
+                    <span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 27px;"></span>
+                </li>
+                <li class="project-link" data="fn">
+                    <h3><b>X</b>  &nbsp; &nbsp; <span class="item">FESTIVALS NEAR ME</span></h3> 
+                    <span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 27px;"></span>
+                </li>
+                <li class="project-link" data="ll">
+                    <h3><b>X</b>  &nbsp; &nbsp; <span class="item">LEARN LEAGUE</span></h3> 
+                    <span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 27px;"></span>
+                </li>
+                <li class="project-link" data="sw">
+                    <h3><b>X</b> &nbsp; &nbsp; <span class="item">STAR WARS KARAOKE</span></h3> 
+                    <span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 27px;"></span>
+                </li>
+            </ul>
+        </div>
+    </div>  
+
+    <footer>
+        <a href="http://github.com/ryanweston"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> GITHUB</h3></a>
+        <a href="#"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> TWITCH</h3></a>
+        <a href="http://twitter.com/rynwstn"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> TWITTER</h3></a>
+        <a href="resume.pdf"><h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right" style="color: #ffffff; font-size: 17px;"></span> RESUME</h3></a>
+    </footer>
 
     <!-- <script src="js/three.js"></script> -->
     <!-- <script src="js/DRACOLoader.js"></script> -->
     <!-- <script src="js/GLTFLoader.js"></script> -->
 
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 </body>
 
 </html>

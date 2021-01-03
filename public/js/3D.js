@@ -1,9 +1,6 @@
 import * as THREE from './three/build/three.module.js';
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from './three/examples/jsm/loaders/DRACOLoader.js';
-import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
-import { GlitchPass } from './three/examples/jsm/postprocessing/GlitchPass.js';
 
 // Instantiate a loader
 var loader = new GLTFLoader();
@@ -13,126 +10,254 @@ dracoLoader.setDecoderPath('../decoder/');
 // dracoLoader.setDecoderConfig( { type: 'js' } );
 loader.setDRACOLoader(dracoLoader);
 
-
-
-const loadingScreen = document.getElementById("loading");
-const domWrapper = document.getElementById("wrapper");
-var links = document.getElementsByTagName("a");
-
+var links = document.getElementsByClassName("project-link");
 console.log(links);
 
-var model;
-var camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 2, 1000);
-camera.position.y = 8;
-camera.position.z = 5;
+const scenes = [];
+let canvas, renderer;
 
-var renderer = new THREE.WebGLRenderer();
+init();
+animate();
 
+function init() {
+    canvas = document.getElementById( "c" );
+    loadScene1();
+    loadScene2();
 
-renderer.setClearColor(0x000000, 0);
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+    renderer = new THREE.WebGLRenderer( { canvas: canvas, antialias: false } );
+	renderer.setClearColor( 0x000000, 0 );
+	renderer.setPixelRatio( window.devicePixelRatio );
+}
 
-var scene = new THREE.Scene();
+function loadScene1() {
+    var model;
 
-var composer = new EffectComposer( renderer );
+    const scene = new THREE.Scene();
 
-//LIGHTS
-var light = new THREE.AmbientLight(0xffffff, 0.15);
-scene.add(light);
+    scene.userData.name= 'faces';
 
-var light2 = new THREE.PointLight(0xffffff, 1.5);
-scene.add(light2);
+    const element = document.getElementById( 'model1' );
+		
+	const sceneElement = document.createElement( 'div' );
+    element.appendChild( sceneElement );
+    
+    scene.userData.element = sceneElement;
 
-var renderPass = new RenderPass( scene, camera );
-composer.addPass( renderPass );
+    //CAMERA
+    var camera = new THREE.PerspectiveCamera(70, 1, 1, 100);
+    camera.position.y = 8;
+    camera.position.z = 18;
+    scene.userData.camera = camera;
 
-var glitchPass = new GlitchPass();
-composer.addPass( glitchPass );
+    // scene.add( new THREE.HemisphereLight( 0xaaaaaa, 0x444444 ) );
 
-//Materials 
-var material1 = new THREE.MeshStandardMaterial({ wireframe: true });
-var material2 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0XFF0000 });
+    // var light = new THREE.AmbientLight(0xffffff, 0.5);
+	// scene.add( light );
 
-// Load a glTF resource
-loader.load(
-    // resource URL
-    '../models/compressed.glb',
+    // LIGHTS
+    var light = new THREE.AmbientLight(0xffffff, 0.1);
+    scene.add(light);
+    var light2 = new THREE.PointLight(0xffffff, 1);
+    scene.add(light2);
 
-    // called when the resource is loaded
-    function (gltf) {
-        model = gltf.scene;
-        model.traverse((o) => {
-            if (o.isMesh) {
-                console.log("there is a mesh");
-                // note: for a multi-material mesh, `o.material` may be an array,
-                // in which case you'd need to set `.map` on each value.
-                o.material = material1;
+    //MATERIALS
+    var material1 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0x999999});
+
+    // Load a glTF resource
+    loader.load(
+        // resource URL
+        '../models/compressed.glb',
+    
+        // called when the resource is loaded
+        function (gltf) {
+            model = gltf.scene;
+            model.traverse((o) => {
+                if (o.isMesh) {
+                    console.log("there is a mesh");
+                    // note: for a multi-material mesh, `o.material` may be an array,
+                    // in which case you'd need to set `.map` on each value.
+                    o.material = material1;
+                }
+            })
+            scene.add(model);
+            // animate();
+            dracoLoader.dispose();
+        },
+        // called while loading is progressing
+        function (xhr) {
+            var currentLoad = (xhr.loaded / xhr.total * 100);
+    
+            if (currentLoad !== 100) {
+                console.log(currentLoad);
+                // domWrapper.style.display = 'none';
+                // loadingScreen.style.display = 'flex';
+            } else if (currentLoad === 100) {
+                console.log("Load successful!");
+                // domWrapper.style.display = 'block';
+                // loadingScreen.style.display = 'none';
             }
-        })
-        scene.add(model);
-        animate();
-        dracoLoader.dispose();
-    },
-    // called while loading is progressing
-    function (xhr) {
-        var currentLoad = (xhr.loaded / xhr.total * 100);
-
-        if (currentLoad !== 100) {
-            console.log(currentLoad);
-            domWrapper.style.display = 'none';
-            loadingScreen.style.display = 'flex';
-        } else if (currentLoad === 100) {
-            console.log("Load successful!");
-            domWrapper.style.display = 'block';
-            loadingScreen.style.display = 'none';
+        },
+        // called when loading has errors
+        function (error) {
+            console.log(error);
+            console.log('An error happened');
+    
         }
-    },
-    // called when loading has errors
-    function (error) {
-        console.log(error);
-        console.log('An error happened');
+    );
+    
+    scenes.push( scene );
+}
 
-    }
-);
+function loadScene2() {
+    const scene = new THREE.Scene();
 
-for (var i = 0; i < links.length; i++) {
-    var a = links[i];
-    a.addEventListener("mouseover", () => { 
-        model.traverse((o) => {
-            if (o.isMesh) {
-                console.log("there is a mesh");
-                // note: for a multi-material mesh, `o.material` may be an array,
-                // in which case you'd need to set `.map` on each value.
-                o.material = material2;
-            }
-        })
-    })
-    a.addEventListener("mouseout", () => {
-        model.traverse((o) => {
-            if (o.isMesh) {
-                console.log("there is a mesh");
-                // note: for a multi-material mesh, `o.material` may be an array,
-                // in which case you'd need to set `.map` on each value.
-                o.material = material1;
-            }
-        })
+    scene.userData.name= 'circle';
+
+    const element = document.getElementById( 'model2' );
+		
+	const sceneElement = document.createElement( 'div' );
+    element.appendChild( sceneElement );
+    
+    scene.userData.element = sceneElement;
+
+    const camera = new THREE.PerspectiveCamera( 50, 1, 1, 10 );
+	camera.position.z = 2;
+    scene.userData.camera = camera;
+
+    const geometry = new THREE.SphereBufferGeometry( 0.5, 32, 32 );
+   
+    var defaultMat = new THREE.ShaderMaterial({
+        uniforms: {
+          color1: {
+            value: new THREE.Color("grey")
+          },
+          color2: {
+            value: new THREE.Color("black")
+          }
+        },
+        vertexShader: `
+          varying vec2 vUv;
+      
+          void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform vec3 color1;
+          uniform vec3 color2;
+        
+          varying vec2 vUv;
+          
+          void main() {
+            
+            gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
+          }
+        `,
+        wireframe: true
       });
+
+
+    let material = defaultMat;
+
+    
+    for (var i = 0; i < links.length; i++) {
+        var a = links[i];
+        a.addEventListener("mouseover", (el) => { 
+            let url = el.target.getAttribute("data");
+            var texture = new THREE.TextureLoader().load( '../images/projects/' + url + '.jpg' );
+            const hoverMat = new THREE.MeshStandardMaterial({
+                map:texture,
+                wireframe: false
+            });
+            scene.children[0].material = hoverMat;
+        })
+        a.addEventListener("mouseout", () => {
+            scene.children[0].material = defaultMat;
+        })
+    };
+
+    scene.add( new THREE.Mesh( geometry, material ) );
+
+    scene.add( new THREE.HemisphereLight( 0xaaaaaa, 0x444444 ) );    
+    var light = new THREE.AmbientLight(0xffffff, 0.2);
+    scene.add( light );
+
+	scenes.push( scene );
 }
 
-window.addEventListener('resize', onWindowResize, false);
-
-function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-}
 
 function animate() {
-
-	requestAnimationFrame( animate );
-    model.rotation.y += 0.01;
-    model.position.x = 2;
-	composer.render();
-
+    render();
+    requestAnimationFrame( animate );
 }
+
+function render() {
+    updateSize();
+
+    canvas.style.transform = `translateY(${window.scrollY}px)`;
+
+    // renderer.setClearColor( 0xffffff );
+    renderer.setScissorTest( false );
+    renderer.clear();
+
+    // renderer.setClearColor( 0xe0e0e0 );
+    renderer.setScissorTest( true );
+
+    scenes.forEach( function ( scene ) {
+        // so something moves
+        if (scene.children[2]) {
+            if (scene.userData.name === 'faces') {
+                scene.children[ 2 ].children[0].rotation.y = Date.now() * 0.0005;
+            } else if (scene.userData.name === 'circle') {
+                scene.children[ 0 ].rotation.y = Date.now() * 0.0005;
+                scene.children[ 0 ].rotation.x = Date.now() * 0.0005;
+            }
+        }
+      
+        
+
+        // get the element that is a place holder for where we want to
+        // draw the scene
+        const element = scene.userData.element;
+
+        // get its position relative to the page's viewport
+        const rect = element.getBoundingClientRect();
+
+        // check if it's offscreen. If so skip it
+        if ( rect.bottom < 0 || rect.top > renderer.domElement.clientHeight ||
+             rect.right < 0 || rect.left > renderer.domElement.clientWidth ) {
+
+            return; // it's off screen
+
+        }
+
+        // set the viewport
+        const width = rect.right - rect.left;
+        const height = rect.bottom - rect.top;
+        const left = rect.left;
+        const bottom = renderer.domElement.clientHeight - rect.bottom;
+
+        renderer.setViewport( left, bottom, width, height );
+        renderer.setScissor( left, bottom, width, height );
+
+        const camera = scene.userData.camera;
+
+        renderer.render( scene, camera );
+
+    } );
+}
+
+function updateSize() {
+
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+
+    if ( canvas.width !== width || canvas.height !== height ) {
+
+        renderer.setSize( width, height, false );
+
+    }
+}
+
+
