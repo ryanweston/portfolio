@@ -1,4 +1,4 @@
-body {background-color:black;margin:0;padding:0;font-family: "Roobert";}
+body {background-color:black;margin:0;padding:0;font-family: "Roobert";overflow-x:hidden;}
 
 #c {
   position: absolute;
@@ -26,13 +26,8 @@ body {background-color:black;margin:0;padding:0;font-family: "Roobert";}
 h1 { 
   font-family: "Roobert", "Roboto";
   color:white;
-  font-size:2.9em;
-}
-
-h3 .glyph {
-  font-family: "Glyph";
-  font-size:1.5em;
-
+  font-size:4em;
+  text-transform: uppercase;
 }
 h1 .glyph {
   font-family: "Glyph";
@@ -85,6 +80,9 @@ nav ul li {
 }
 nav ul li:nth-child(1) {
   padding-left:0px;
+}
+nav ul li a h3{
+  vertical-align:middle;
 }
 nav .right {
   float:right;
@@ -234,4 +232,25 @@ footer a h3 {
 .comingsoon h1, .comingsoon2 h1{
   margin:0px;
   font-size:5em;
+}
+
+@media (min-width:1700px) {
+  /* #content {
+    width:80%;
+  } */
+
+  #content {
+    margin-top:5%;
+  }
+  /* #content h1 {
+    max-width:70%;
+  } */
+
+  /* #model1 > div:nth-child(1) {
+    left:0px;
+    height:900px;
+    width:900px;
+    top:-350px;
+  } */
+  
 }
