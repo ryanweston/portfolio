@@ -26,8 +26,7 @@ body {background-color:black;margin:0;padding:0;font-family: "Roobert";overflow-
 h1 { 
   font-family: "Roobert", "Roboto";
   color:white;
-  font-size:4em;
-  text-transform: uppercase;
+  font-size:3.2em;
 }
 h1 .glyph {
   font-family: "Glyph";
@@ -242,9 +241,9 @@ footer a h3 {
   #content {
     margin-top:5%;
   }
-  /* #content h1 {
-    max-width:70%;
-  } */
+  #content h1 {
+    max-width:75%;
+  }
 
   /* #model1 > div:nth-child(1) {
     left:0px;

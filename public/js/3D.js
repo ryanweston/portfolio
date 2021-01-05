@@ -55,13 +55,13 @@ function loadScene1() {
     // scene.add( light );
 
     // LIGHTS
-    var light = new THREE.AmbientLight(0xffffff, 0.2);
+    var light = new THREE.AmbientLight(0xffffff, 3);
     scene.add(light);
-    var light2 = new THREE.PointLight(0xffffff, 0.5);
+    var light2 = new THREE.PointLight(0xffffff, 9);
     scene.add(light2);
 
     //MATERIALS
-    var material1 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0xFFFFFF });
+    var material1 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0x000000 });
 
     // Load a glTF resource
     loader.load(
@@ -124,15 +124,16 @@ function loadScene2() {
     camera.position.z = 2;
     scene.userData.camera = camera;
 
+
     const geometry = new THREE.SphereBufferGeometry(0.5, 32, 32);
 
     var defaultMat = new THREE.ShaderMaterial({
         uniforms: {
             color1: {
-                value: new THREE.Color("grey")
+                value: new THREE.Color("black")
             },
             color2: {
-                value: new THREE.Color("black")
+                value: new THREE.Color("grey")
             }
         },
         vertexShader: `
@@ -178,10 +179,12 @@ function loadScene2() {
     };
 
     scene.add(new THREE.Mesh(geometry, material));
+    // var light = new THREE.AmbientLight(0xffffff, 0);
+    // scene.add(light);
+    // var light2 = new THREE.PointLight(0xffffff, 0.1);
+    // scene.add(light2);
 
-    scene.add(new THREE.HemisphereLight(0xaaaaaa, 0x444444));
-    var light = new THREE.AmbientLight(0xffffff, 0.2);
-    scene.add(light);
+
 
     scenes.push(scene);
 }
