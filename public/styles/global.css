@@ -31,8 +31,11 @@ h1 {
 h1 .glyph {
   font-family: "Glyph";
 }
-h1 .underline {
+h1 a {
   border-bottom:1px solid #ffffff;
+}
+h1 a:hover {
+  border-bottom:4px solid #ffffff;
 }
 h2 {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -56,8 +59,13 @@ p {
 }
 
 a {
+  color:white;
   text-decoration: none;
 }
+
+/* a:hover {
+  cursor:pointer;
+} */
 
 nav {
   width:100vw;
@@ -183,6 +191,7 @@ nav ul li:hover h3, footer a:hover {
   left:-100px;
   width:800px;
   height:800px;
+  z-index:-1;
 }
 
 #model2 > div:nth-child(1) {
@@ -191,6 +200,7 @@ nav ul li:hover h3, footer a:hover {
   right:-175px;
   width: 500px;
   height: 500px;
+  z-index:-1;
 }
 
 footer {
