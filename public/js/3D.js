@@ -55,9 +55,14 @@ function loadScene1() {
     // scene.add( light );
 
     // LIGHTS
-    var light = new THREE.AmbientLight(0xffffff, 3);
+    // var light = new THREE.AmbientLight(0xffffff, 3);
+    // scene.add(light);
+    // var light2 = new THREE.PointLight(0xffffff, 9);
+    // scene.add(light2);
+
+    var light = new THREE.AmbientLight(0xffffff, 10);
     scene.add(light);
-    var light2 = new THREE.PointLight(0xffffff, 9);
+    var light2 = new THREE.PointLight(0xffffff, 15);
     scene.add(light2);
 
     //MATERIALS
