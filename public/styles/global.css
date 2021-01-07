@@ -154,11 +154,8 @@ nav ul li:hover h3, footer a:hover {
 }
 
 #content2 ul li:hover h3 span {
-  /* color:black; */
-  /* font-size:5em; */
   background:white;
   color:black;
-  /* text-decoration: line-through; */
 }
 
 #content2 ul li * {

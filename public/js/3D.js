@@ -179,11 +179,11 @@ function loadScene2() {
     };
 
     scene.add(new THREE.Mesh(geometry, material));
-    // var light = new THREE.AmbientLight(0xffffff, 0);
-    // scene.add(light);
-    // var light2 = new THREE.PointLight(0xffffff, 0.1);
-    // scene.add(light2);
-
+   
+    var light = new THREE.AmbientLight(0xffffff, 1);
+    scene.add(light);
+    var light2 = new THREE.PointLight(0xffffff, 0.1);
+    scene.add(light2);
 
 
     scenes.push(scene);
