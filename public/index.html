@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/kao0uud.css">
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <script async defer data-domain="ryanweston.me" src="https://plausible.io/js/plausible.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,12 +20,12 @@
 
     <canvas id="c"></canvas>
 
-    <nav>
-        <ul>
+    <!-- <nav> -->
+        <!-- <ul >
             <li class="left"><a href="/">
                     <h3>RYAN WESTON</h3>
                 </a></li>
-            <div class="right">
+            <div class="topNav right" id="myTopNav">
                 <li><a href="comingsoon.html">
                         <h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right"
                                 style="color: #ffffff; font-size: 17px;"></span> JOURNAL</h3>
@@ -42,10 +42,22 @@
                         <h3><span class="iconify" data-inline="false" data-icon="cil:arrow-right"
                                 style="color: #ffffff; font-size: 17px;"></span> CONTACT</h3>
                     </a></li>
+                    <li href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </li>
 
             </div>
-        </ul>
-    </nav>
+        </ul> -->
+        <div class="topNav" id="myTopNav">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+    <!-- </nav> -->
 
     <div class="header-container">
         <div id="content">
@@ -113,6 +125,8 @@
                     style="color: #ffffff; font-size: 17px;"></span> RESUME</h3>
         </a>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
