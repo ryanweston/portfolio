@@ -1,4 +1,5 @@
-body {background-color:black;margin:0;padding:0;font-family: "Roobert";overflow-x:hidden;}
+html {overflow-x:hidden;}
+body {background-color:black;margin:0;padding:0;font-family: "Roobert";}
 
 #c {
   position: absolute;
@@ -27,7 +28,6 @@ h1 {
   font-family: "Roobert", "Roboto";
   color:white;
   font-size:1.5em;
-  /* font-size:3.2em; */
 }
 h1 .glyph {
   font-family: "Glyph";
@@ -184,7 +184,6 @@ nav ul li:hover h3, footer a:hover {
 #content2 {
   position: relative;
   width:100%;
-  /* margin-right:15%; */
 }
 
 #content2 ul {
@@ -219,23 +218,26 @@ nav ul li:hover h3, footer a:hover {
 }
 
 #model1, #model2 {
+  position: relative;
+  width:100vw;
+  overflow-x:hidden;
   display: inline-block;
   box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.25);
 }
 
 #model1 > div:nth-child(1) {
   position:absolute;
-  bottom:-200px;
-  left:-250px;
-  width:800px;
-  height:800px;
+  bottom: -75px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
   z-index:-1;
 }
 
 #model2 > div:nth-child(1) {
   position:absolute;
   top:-150px;
-  right:-175px;
+  right:-150px;
   width: 500px;
   height: 500px;
   z-index:-1;
@@ -295,8 +297,6 @@ footer a h3 {
   .content-container {
     margin-top:10%;
     padding:90px;
-    justify-content: center;
-    align-items: center;
   }
   #content {
     margin-top:20%;
@@ -306,17 +306,29 @@ footer a h3 {
   }
 
   #content2 {
-    margin-right:6%;
+    width:94%;
+  }
+
+  #model1, #model2 {
+    /* position:relative;
+    width:auto; */
+    /* overflow-x:visible; */
   }
 
   #model1 > div:nth-child(1) {
     position:absolute;
-    bottom:-50px;
-    left:-100px;
-    width:800px;
-    height:800px;
+    bottom: -100px;
+    left: -100px;
+    width: 700px;
+    height: 700px;
     z-index:-1;  
   }
+
+  #model2 > div:nth-child(1) {
+   right:0px;
+   top:-150px;
+  }
+  
 
   footer {
     padding:30px 70px;
@@ -325,15 +337,27 @@ footer a h3 {
 
 @media (min-width:960px) { 
   h1 {
-    font-size:2.9em;
+    font-size:2.7em;
   }
+  #model1 > div:nth-child(1) {
+    position:absolute;
+    bottom:-50px;
+    left:-100px;
+    width:800px;
+    height:800px;
+    z-index:-1;  
+  }
+  #model2 > div:nth-child(1) {
+    right:125px;
+    top:-150px;
+   }
   #content h1 {
     max-width:85%;
     margin-left:auto;
   }
 
   #content2 {
-    margin-right:15%;
+    width:85%;
   }
 }
 
