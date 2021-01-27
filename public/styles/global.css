@@ -344,7 +344,7 @@ footer a h3 {
   }
 
   #model2 > div:nth-child(1) {
-   right:0px;
+   right:-225px;
    top:-150px;
   }
 
@@ -352,7 +352,6 @@ footer a h3 {
     font-size:3em;
   }
   
-
   footer {
     padding:40px 90px;
   }
