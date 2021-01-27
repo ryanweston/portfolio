@@ -25,7 +25,7 @@ function init() {
     loadScene2();
 
     renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false });
-    renderer.setClearColor(0xFFFFFF, 1);
+    renderer.setClearColor(0x000000, 1);
     renderer.setPixelRatio(window.devicePixelRatio);
 }
 
@@ -60,13 +60,13 @@ function loadScene1() {
     // var light2 = new THREE.PointLight(0xffffff, 9);
     // scene.add(light2);
 
-    var light = new THREE.AmbientLight(0xffffff, 1);
+    var light = new THREE.AmbientLight(0xffffff, 10);
     scene.add(light);
-    var light2 = new THREE.PointLight(0xffffff, 1);
+    var light2 = new THREE.PointLight(0xFFFFFF, 15);
     scene.add(light2);
 
     //MATERIALS
-    var material1 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0xDDDDDD });
+    var material1 = new THREE.MeshStandardMaterial({ wireframe: true, color: 0x000000});
 
     // Load a glTF resource
     loader.load(
@@ -135,10 +135,10 @@ function loadScene2() {
     var defaultMat = new THREE.ShaderMaterial({
         uniforms: {
             color1: {
-                value: new THREE.Color(0xDDDDDD)
+                value: new THREE.Color("grey")
             },
             color2: {
-                value: new THREE.Color(0xDDDDDD)
+                value: new THREE.Color("black")
             }
         },
         vertexShader: `
