@@ -23,6 +23,6 @@
     "express": "^4.17.1",
     "gltf-pipeline": "^2.1.9",
     "nodemon": "^2.0.4",
-    "three": "^0.117.1"
+    "three": "^0.125.0"
   }
 }
