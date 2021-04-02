@@ -4,9 +4,11 @@ body {background-color:black;margin:0;padding:0;font-family: "Roobert"; overflow
 #c {
   position: absolute;
   left: 0;
+  top:0;
   width: 100vw;
   height: 100%;
-  z-index:-1;
+  z-index:2;
+  opacity:0.8;
 }
 
 @font-face {
@@ -123,14 +125,6 @@ nav ul li:hover h3, footer a:hover {
   display: none;
 }
 
-/* @media (max-width:600px) {
-  .topNav.responsive .icon {
-    position: absolute;
-    right: 30px;
-    top: 30px;
-  }
-} */
-
 @media (max-width: 800px) {
   .topNav.responsive .icon {
     position: absolute;
@@ -167,7 +161,6 @@ nav ul li:hover h3, footer a:hover {
 
 .header-container {
   padding:30px;
-  /* padding:90px; */
   height:100vh;
   width:100vw;
   display:flex;
@@ -184,7 +177,6 @@ nav ul li:hover h3, footer a:hover {
 }
 #content {
   margin-top:25%;
-  /* margin-top:10%; */
   width:100%;
   box-sizing: border-box;
   position: relative;
@@ -192,7 +184,6 @@ nav ul li:hover h3, footer a:hover {
 
 #content h1 {
   max-width:100%;
-  /* max-width:85%; */
 }
 #content h1 svg {
   margin-bottom:-3px;
@@ -235,30 +226,12 @@ nav ul li:hover h3, footer a:hover {
   float:right;
 }
 
-#model1, #model2 {
+#model1 {
   position: relative;
   width:100vw;
   overflow-x:hidden;
   display: inline-block;
   box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.25);
-}
-
-#model1 > div:nth-child(1) {
-  position:absolute;
-  bottom: -75px;
-  left: -150px;
-  width: 600px;
-  height: 600px;
-  z-index:-1;
-}
-
-#model2 > div:nth-child(1) {
-  position:absolute;
-  top:-150px;
-  right:-150px;
-  width: 500px;
-  height: 500px;
-  z-index:-1;
 }
 
 footer {
@@ -287,7 +260,6 @@ footer a h3 {
   display:flex;
   height:100vh;
   width:100vw;
-  /* justify-content:center; */
   align-items: center;
   flex-direction: column;
 }
@@ -333,20 +305,6 @@ footer a h3 {
     width:94%;
   }
 
-  #model1 > div:nth-child(1) {
-    position:absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 700px;
-    height: 700px;
-    z-index:-1;  
-  }
-
-  #model2 > div:nth-child(1) {
-   right:-225px;
-   top:-150px;
-  }
-
   .comingsoon .content h1 {
     font-size:3em;
   }
@@ -360,27 +318,23 @@ footer a h3 {
   h1 {
     font-size:2.7em;
   }
-  #model1 > div:nth-child(1) {
-    position:absolute;
-    bottom:-50px;
-    left:-100px;
-    width:800px;
-    height:800px;
-    z-index:-1;  
+  #c {
+    opacity:1;
   }
-  #model2 > div:nth-child(1) {
-    right:125px;
-    top:-150px;
-   }
+  #content {
+    margin-top:12%;
+  }
   #content h1 {
-    max-width:85%;
-    margin-left:auto;
+    max-width:90%;
   }
 
   #content2 {
     width:85%;
   }
 
+  #content2 h3 {
+    font-size: 1em;
+  }
   .comingsoon .content h1 {
     font-size:5em;
   }
@@ -391,7 +345,7 @@ footer a h3 {
     margin-top:0%;
   }
   h1 {
-    font-size:3.2em;
+    font-size:3.9em;
   }
 }
 
